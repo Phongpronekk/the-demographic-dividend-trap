@@ -1,0 +1,1231 @@
+.counter {
+  font-size: 16px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: var(--accent);
+  background: var(--accent-bg);
+  border: 2px solid transparent;
+  transition: border-color 0.3s;
+  margin-bottom: 24px;
+
+  &:hover {
+    border-color: var(--accent-border);
+  }
+  &:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+}
+
+.hero {
+  position: relative;
+
+  .base,
+  .framework,
+  .vite {
+    inset-inline: 0;
+    margin: 0 auto;
+  }
+
+  .base {
+    width: 170px;
+    position: relative;
+    z-index: 0;
+  }
+
+  .framework,
+  .vite {
+    position: absolute;
+  }
+
+  .framework {
+    z-index: 1;
+    top: 34px;
+    height: 28px;
+    transform: perspective(2000px) rotateZ(300deg) rotateX(44deg) rotateY(39deg)
+      scale(1.4);
+  }
+
+  .vite {
+    z-index: 0;
+    top: 107px;
+    height: 26px;
+    width: auto;
+    transform: perspective(2000px) rotateZ(300deg) rotateX(40deg) rotateY(39deg)
+      scale(0.8);
+  }
+}
+
+#center {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  place-content: center;
+  place-items: center;
+  flex-grow: 1;
+
+  @media (max-width: 1024px) {
+    padding: 32px 20px 24px;
+    gap: 18px;
+  }
+}
+
+#next-steps {
+  display: flex;
+  border-top: 1px solid var(--border);
+  text-align: left;
+
+  & > div {
+    flex: 1 1 0;
+    padding: 32px;
+    @media (max-width: 1024px) {
+      padding: 24px 20px;
+    }
+  }
+
+  .icon {
+    margin-bottom: 16px;
+    width: 22px;
+    height: 22px;
+  }
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+#docs {
+  border-right: 1px solid var(--border);
+
+  @media (max-width: 1024px) {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+}
+
+#next-steps ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 8px;
+  margin: 32px 0 0;
+
+  .logo {
+    height: 18px;
+  }
+
+  a {
+    color: var(--text-h);
+    font-size: 16px;
+    border-radius: 6px;
+    background: var(--social-bg);
+    display: flex;
+    padding: 6px 12px;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    transition: box-shadow 0.3s;
+
+    &:hover {
+      box-shadow: var(--shadow);
+    }
+    .button-icon {
+      height: 18px;
+      width: 18px;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    margin-top: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    li {
+      flex: 1 1 calc(50% - 8px);
+    }
+
+    a {
+      width: 100%;
+      justify-content: center;
+      box-sizing: border-box;
+    }
+  }
+}
+
+#spacer {
+  height: 88px;
+  border-top: 1px solid var(--border);
+  @media (max-width: 1024px) {
+    height: 48px;
+  }
+}
+
+.ticks {
+  position: relative;
+  width: 100%;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: -4.5px;
+    border: 5px solid transparent;
+  }
+
+  &::before {
+    left: 0;
+    border-left-color: var(--border);
+  }
+  &::after {
+    right: 0;
+    border-right-color: var(--border);
+  }
+}
+
+.chat-box {
+  background: linear-gradient(180deg, #dbf7ff 50%, #e0f2fe 100%);
+  border-radius: 18px;
+  max-width: 900px;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid #7dd3fc;
+  padding: 0;
+}
+
+.chat-body {
+  height: 420px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Tin nhắn chung */
+.msg {
+  padding: 10px 14px;
+  border-radius: 18px;
+  max-width: 70%;
+  font-size: 14px;
+}
+
+/* Người dùng */
+.user-msg {
+  background: #3b82f6;
+  color: white;
+  align-self: flex-end;
+}
+
+/* Tài xế */
+.bot-msg {
+  background: #1e293b;
+  color: white;
+  align-self: flex-start;
+}
+
+/* Câu hỏi */
+.quick-questions {
+  margin-top: 16px;
+  padding: 14px;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  border-radius: 16px;
+
+  border: 2px solid rgba(255, 255, 255, 0.25); /* viền rõ */
+
+  background: rgba(15, 23, 42, 0.6);          /* nền nhẹ */
+  backdrop-filter: blur(8px);
+
+  box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+}
+
+.quick-questions button {
+  background: #1e293b;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.quick-questions button:hover {
+  background: #334155;
+}
+
+.quick-questions button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.chat-header {
+  background: #202020;
+  padding: 18px 22px;
+  color: white;
+  border-bottom: 1px solid #333;
+}
+
+.chat-header-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* Avatar tròn */
+.avatar {
+  width: 34px;
+  height: 34px;
+  background: #7c3aed;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.avatar::before {
+  content: "👤";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  font-size: 18px;
+}
+
+/* Tên */
+.chat-name {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/* Mô tả */
+.chat-desc {
+  font-size: 13px;
+  color: #cbd5f5;
+}
+
+.typing-msg {
+  background: #333;
+  color: #aaa;
+  align-self: flex-start;
+  font-style: italic;
+  opacity: 0.8;
+}
+
+.globe-scene {
+  width: 100%;
+}
+
+.globe-box {
+  width: 100%;
+  height: 520px;
+  max-width: 900px;
+  margin: 20px auto 0;
+  border-radius: 24px;
+  overflow: hidden;
+  background: radial-gradient(circle, rgba(30, 41, 59, 0.8), rgba(0, 0, 0, 0.2));
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.chapter-select {
+  position: relative;
+  z-index: 20;
+  background: rgba(15, 23, 42, 0.9);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 8px 40px 8px 12px;
+  border-radius: 999px;
+  font-size: 14px;
+  outline: none;
+  cursor: pointer;
+}
+
+.chapter-select:hover {
+  background: rgba(30, 41, 59, 0.95);
+}
+
+.chapter-timeline {
+  position: fixed;
+  top: 78px;
+  left: 24px;
+  z-index: 30;
+  width: 260px;
+  padding: 12px 14px;
+  border-radius: 16px;
+  background: rgba(15, 23, 42, 0.72);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.chapter-timeline-label {
+  color: white;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.chapter-timeline-track {
+  height: 5px;
+  width: 100%;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.18);
+  overflow: hidden;
+}
+
+.chapter-timeline-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: #38bdf8;
+  transition: width 0.35s ease;
+}
+
+.income-scene {
+  position: relative;
+  min-height: 620px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.income-trigger {
+  position: relative;
+  z-index: 5;
+
+  border: none;
+  background: rgba(15, 23, 42, 0.65);   /* nền tối mờ */
+  backdrop-filter: blur(12px);
+
+  color: white;
+  padding: 20px 36px;
+
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-size: 52px;
+  font-weight: 800;
+  letter-spacing: -1px;
+
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+}
+
+.money-icon {
+  font-size: 46px;
+}
+
+.income-trigger:hover {
+  transform: scale(1.03);
+  background: rgba(30, 41, 59, 0.8);
+}
+
+.income-stats-orbit {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.income-stat-card {
+  position: absolute;
+  width: 260px;
+  padding: 22px;
+  border-radius: 20px;
+  background: rgba(15, 23, 42, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(14px);
+  color: white;
+  opacity: 0;
+  transform: scale(0.7);
+  animation: popStat 0.5s ease forwards;
+}
+
+.random-pos-0 {
+  top: 12%;
+  left: 16%;
+}
+
+.random-pos-1 {
+  top: 18%;
+  right: 14%;
+}
+
+.random-pos-2 {
+  bottom: 15%;
+  left: 20%;
+}
+
+.random-pos-3 {
+  bottom: 12%;
+  right: 18%;
+}
+
+@keyframes popStat {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.driver-sim-card {
+  width: min(620px, 90vw);
+  margin: 28px auto 0;
+  padding: 28px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.94);
+  color: #111827;
+  text-align: left;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+}
+
+.driver-sim-title {
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-weight: 600;
+  font-size: 22px;
+  letter-spacing: -0.2px;
+}
+
+.driver-slider-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.driver-slider-row input {
+  flex: 1;
+}
+
+.driver-hours {
+  margin: 16px 0 22px;
+  font-weight: 700;
+}
+
+.driver-result {
+  background: #f1f1f1;
+  padding: 15px 18px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.driver-result span {
+  font-size: 13px;
+  color: #555;
+  font-weight: 700;
+}
+
+.driver-result strong {
+  font-size: 20px;
+}
+
+.danger-text {
+  color: #ef4444;
+}
+
+.driver-warning {
+  margin-top: 16px;
+  font-size: 13px;
+  color: #555;
+}
+
+.intro-sapo-box {
+  max-width: 900px;
+  padding: 30px 40px;
+
+  background: rgba(0, 0, 0, 0.01);
+  backdrop-filter: blur(8px);
+
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.2);
+
+  box-shadow: 0 12px 40px rgba(0,0,0,0.5);
+}
+
+.intro-sapo-text {
+  font-size: 26px;
+  line-height: 1.7;
+  font-weight: 600;
+  color: #fff;
+
+  text-align: center;
+  text-shadow: 0 3px 14px rgba(0,0,0,0.9);
+}
+
+.intro-title {
+  font-size: 100px;
+  font-weight: 900;
+
+  text-shadow:
+    0 6px 30px rgba(0,0,0,0.9),
+    0 2px 10px rgba(0,0,0,0.7);
+}
+
+.intro-subtitle {
+  font-size: 100px;
+  font-weight: 900;
+
+  text-shadow:
+    0 6px 30px rgba(0,0,0,0.9),
+    0 2px 10px rgba(0,0,0,0.7);
+}
+
+.text {
+  text-align: justify;
+  font-size: 22px;
+  line-height: 1.9;
+  font-weight: 400;
+}
+
+.subtitle {
+  font-size: 30px;
+  line-height: 1.9;
+  font-weight: 400;
+}
+
+.title {
+  white-space: pre-line;
+}
+
+.income-stat-card.highlight {
+  background: linear-gradient(135deg, #22c55e, #facc15);
+  color: #111;
+  transform: scale(1.18);
+  box-shadow: 0 0 40px rgba(250, 204, 21, 0.8);
+  border: 2px solid rgba(255,255,255,0.7);
+}
+
+.income-stat-card.dim {
+  background: rgba(40, 40, 40, 0.55);
+  color: #aaa;
+  opacity: 0.75;
+  filter: grayscale(80%);
+}
+
+.fake-chat-input {
+  display: flex;
+  gap: 10px;
+  padding: 14px;
+  border-top: 1px solid #333;
+  background: #171717;
+}
+
+.fake-chat-input input {
+  flex: 1;
+  padding: 12px 14px;
+  border-radius: 999px;
+  border: 1px solid #334155;
+  background: #0f172a;
+  color: white;
+  font-size: 15px;
+}
+
+.fake-chat-input input::placeholder {
+  color: #94a3b8;
+}
+
+.fake-chat-input button {
+  padding: 0 18px;
+  border-radius: 999px;
+  border: none;
+  background: #3b82f6;
+  color: white;
+  font-weight: 700;
+  cursor: not-allowed;
+  opacity: 0.75;
+}
+
+.text,
+.intro-sapo-text {
+  white-space: pre-line;
+}
+
+.clicked-tab {
+  border-color: #38bdf8 !important;
+  box-shadow: 0 0 18px rgba(56, 189, 248, 0.8);
+}
+
+.timeline-final {
+  margin-top: 22px;
+  padding: 18px 24px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+
+  font-size: 22px;
+  line-height: 1.7;
+  font-weight: 600;
+  color: #fff;
+  text-align: center;
+
+  background: rgba(0, 0, 0, 0.38);
+  backdrop-filter: blur(8px);
+  border-radius: 16px;
+  border: 1px solid rgba(56, 189, 248, 0.45);
+  box-shadow: 0 0 30px rgba(56, 189, 248, 0.35);
+}
+
+.type-cursor {
+  margin-left: 3px;
+  animation: blinkCursor 0.8s infinite;
+}
+
+@keyframes blinkCursor {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
+.driver-select {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  margin: 8px 0 20px;
+  font-size: 16px;
+}
+
+.driver-label {
+  font-weight: 700;
+}
+
+.driver-breakdown {
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #374151;
+}
+
+.algorithm-scene {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.phone-frame {
+  position: relative;
+  width: 350px;
+  height: 650px;
+
+  border-radius: 46px;
+  background: linear-gradient(145deg, #0b0b0b, #242424);
+
+  border: 10px solid #111;
+  box-shadow:
+    inset 0 0 0 3px #2f2f2f,
+    inset 0 0 25px rgba(255,255,255,0.08),
+    0 30px 80px rgba(0,0,0,0.65);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+.phone-frame::before {
+  content: "";
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 120px;
+  height: 32px;
+
+  background: linear-gradient(180deg, #000, #111); /* đậm hơn */
+
+  border-radius: 0 0 20px 20px;
+
+  box-shadow:
+    0 4px 10px rgba(0,0,0,0.9),   /* bóng ngoài */
+    inset 0 -2px 6px rgba(255,255,255,0.08); /* highlight nhẹ */
+
+  border: 1px solid rgba(255,255,255,0.08); /* viền nhẹ */
+
+  z-index: 10;
+}
+
+.phone-frame .notch-speaker {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 40px;
+  height: 4px;
+
+  background: #222;
+  border-radius: 999px;
+
+  z-index: 11;
+}
+
+.phone-frame .notch-camera {
+  position: absolute;
+  top: 18px;
+  left: calc(50% + 45px);
+
+  width: 8px;
+  height: 8px;
+
+  background: #000;
+  border-radius: 50%;
+
+  box-shadow: 0 0 4px rgba(255,255,255,0.2);
+
+  z-index: 11;
+}
+
+.phone-frame::after {
+  content: "";
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 120px;
+  height: 5px;
+
+  background: rgba(255,255,255,0.35);
+  border-radius: 999px;
+
+  z-index: 5;
+}
+
+.incoming-card {
+  font-family: "Be Vietnam Pro", "Inter", sans-serif;
+  background: #2a2a2a;
+  padding: 30px 20px;
+  margin-top: 35px;
+  width: 78%;
+  border-radius: 24px;
+  text-align: center;
+}
+
+.algo-badge {
+  font-size: 14px;
+  font-weight: 700;
+  color: #facc15;
+  letter-spacing: 0.5px;
+}
+
+.algo-price {
+  font-family: "Inter", sans-serif;
+
+  font-size: 42px;      /* to hơn */
+  font-weight: 900;
+
+  letter-spacing: -1px;
+
+  color: #4ade80;
+
+  text-shadow:
+    0 0 12px rgba(74, 222, 128, 0.8),
+    0 0 30px rgba(74, 222, 128, 0.4);
+}
+
+.algo-distance {
+  color: #ffcccc;
+  font-size: 16px;
+  line-height: 1.4;
+  margin-bottom: 25px;
+}
+
+.btn-green {
+  font-family: "Be Vietnam Pro", sans-serif;
+  background: #39ff14;
+  color: #000;
+  border: none;
+  padding: 15px 0;
+  width: 100%;
+  border-radius: 30px;
+  font-size: 18px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.btn-green:hover {
+  transform: translateY(-2px) scale(1.02);
+}
+
+.choice-text {
+  font-size: 18px;
+  text-align: center;
+  padding: 0 24px;
+}
+
+.btn-choice {
+  background-color: #444;
+  color: white;
+
+  border: 2px solid #666;
+
+  padding: 15px 30px;
+  width: 75%;
+
+  border-radius: 12px;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.2s;
+  margin: 20px 0;
+}
+
+.btn-day {
+  background: linear-gradient(135deg, #facc15, #fde047);
+  color: #111;
+
+  border: none;
+
+  box-shadow:
+    0 10px 25px rgba(250, 204, 21, 0.5),
+    0 0 20px rgba(250, 204, 21, 0.4);
+}
+
+.btn-night {
+  background: linear-gradient(135deg, #1e293b, #334155);
+  color: #e2e8f0;
+
+  border: 1px solid rgba(255,255,255,0.2);
+
+  box-shadow:
+    0 8px 20px rgba(0,0,0,0.6);
+}
+
+.btn-day:hover {
+  transform: translateY(-2px) scale(1.03);
+}
+
+.btn-night:hover {
+  transform: translateY(-2px) scale(1.03);
+  background: linear-gradient(135deg, #334155, #475569);
+}
+
+.pov-fullscreen {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: #000;
+}
+
+.pov-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.result-red {
+  background: #3d0000;
+}
+
+.icon-x {
+  background: #ff3333;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 34px;
+  font-weight: 900;
+  position: relative;
+  top: -20px;
+}
+
+.result-title {
+  font-family: "Be Vietnam Pro", sans-serif;
+  color: #ff3333;
+  font-size: 22px;
+  font-weight: 900;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 0 20px;
+}
+
+.result-desc {
+  color: #ffcccc;
+  font-size: 16px;
+  text-align: center;
+  padding: 0 24px;
+  line-height: 1.7;
+}
+
+.btn-reset {
+  margin-top: 30px;
+
+  background: linear-gradient(135deg, #facc15, #4ade80);
+  color: #000;
+
+  border: none;
+  padding: 14px 0;
+  width: 80%;
+
+  border-radius: 30px;
+
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 10px 25px rgba(34, 197, 94, 0.4),
+    0 0 20px rgba(74, 222, 128, 0.3);
+
+  transition: all 0.2s ease;
+}
+
+.btn-reset:hover {
+  transform: translateY(-2px) scale(1.02);
+}
+
+.btn-reset:active {
+  transform: scale(0.95);
+}
+
+.income-main-card {
+  position: relative;
+  z-index: 5;
+
+  width: 420px;              /* to hơn */
+  padding: 40px 36px;
+
+  border-radius: 24px;
+
+  background: linear-gradient(135deg, #4ade80, #facc15);
+
+  color: #111;
+  text-align: center;
+
+  font-family: "Be Vietnam Pro", sans-serif;
+
+  box-shadow:
+    0 0 60px rgba(250, 204, 21, 0.9),
+    0 30px 80px rgba(0,0,0,0.5);
+
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.income-main-card .stat-value {
+  font-size: 40px;   /* 👈 chữ to hơn */
+}
+
+.income-main-card:hover {
+  transform: scale(1.05);
+}
+
+.income-stat-card {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+.video-scene {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.main-video {
+  width: 80%;
+  max-width: 900px;
+
+  border-radius: 16px;
+
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+}
+
+.picture-scene {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.main-image {
+  width: 80%;
+  max-width: 900px;
+
+  border-radius: 16px;
+
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+
+.donut-scene {
+  font-family: "Be Vietnam Pro", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   /* căn giữa dọc */
+  align-items: center;       /* căn giữa ngang */
+  height: 100%;
+  gap: 24px;
+}
+
+.donut-title {
+  color: white;
+  font-size: 64px;
+  font-weight: 900;
+  text-align: center;
+  letter-spacing: -1px;
+
+  text-shadow:
+    0 6px 30px rgba(0,0,0,0.9),
+    0 2px 10px rgba(0,0,0,0.7);
+}
+
+.donut-card {
+  position: relative;
+  width: 750px;
+  height: 420px;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 25px 70px rgba(0,0,0,0.45);
+}
+
+.donut-svg {
+  position: absolute;
+  top: 70px;
+  left: 235px;
+  width: 280px;
+  height: 280px;
+  transform: rotate(-90deg);
+}
+
+.donut-center {
+  position: absolute;
+  top: 188px;
+  left: 235px;
+  width: 280px;
+  text-align: center;
+  color: #000;
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+.donut-label {
+  position: absolute;
+  color: #000;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.donut-label.worker {
+  top: 75px;
+  left: 80px;
+  width: 140px;
+}
+
+.donut-label.platform {
+  top: 250px;
+  left: 530px;
+  width: 150px;
+}
+
+.donut-label strong {
+  font-size: 24px;
+}
+
+.donut-segment {
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.donut-segment:hover {
+  stroke-width: 21;
+  filter: drop-shadow(0 0 6px rgba(0,0,0,0.35));
+}
+
+.donut-tooltip {
+  position: absolute;
+  z-index: 10;
+
+  min-width: 190px;
+  padding: 14px 18px;
+  border-radius: 16px;
+
+  background: rgba(15, 23, 42, 0.92);
+  color: #fff;
+
+  font-family: "Be Vietnam Pro", sans-serif;
+  text-align: center;
+
+  box-shadow: 0 12px 35px rgba(0,0,0,0.35);
+  animation: tooltipFade 0.2s ease;
+}
+
+.donut-tooltip div {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.donut-tooltip strong {
+  display: block;
+  font-size: 28px;
+  font-weight: 900;
+  margin: 4px 0;
+}
+
+.donut-tooltip span {
+  font-size: 13px;
+  opacity: 0.85;
+}
+
+.donut-tooltip.platform {
+  top: 250px;
+  left: 535px;
+}
+
+.donut-tooltip.worker {
+  top: 75px;
+  left: 70px;
+}
+
+@keyframes tooltipFade {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.timeline-subtitle {
+  margin-top: -10px;
+  margin-bottom: 24px;
+  font-size: 22px;
+  font-weight: 500;
+  color: #e5e7eb;
+  text-align: center;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+}
