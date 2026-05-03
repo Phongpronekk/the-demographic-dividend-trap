@@ -4,7 +4,7 @@ export const storyData = {
     type: "cover",
     title: `"Rút ruột" dân số vàng:
     Chiếc bẫy nhân lực dưới vỏ bọc kinh tế nền tảng`,
-    bg: "/videos/intro_1.mp4",
+    bg: "https://res.cloudinary.com/dizimfqyz/video/upload/v1777833286/intro_1_my1zhf.mp4",
     next: "intro_sapo",
   },
 
@@ -23,7 +23,7 @@ export const storyData = {
     chapter: "Hồi 1",
     title: `Cạm bẫy tự do: 
     Lời nói dối mang tên “làm chủ thời gian”`,
-    bg: "/videos/1_1.mp4",
+    bg: "https://res.cloudinary.com/dizimfqyz/video/upload/v1777833026/1_1_knqnha.mp4",
     prev: "intro_sapo",
     next: "act1_sapo",
   },
@@ -121,7 +121,7 @@ export const storyData = {
   act2_interview_2: {
     id: "act2_interview_2",
     type: "video",
-    src: "/videos/2_3.mp4",
+    src: "https://res.cloudinary.com/dizimfqyz/video/upload/v1777833396/2_3_jyeq6m.mp4",
     bg: "https://marketplace.canva.com/AOkVY/MAHCzrAOkVY/1/tl/canva-abstract-white-light-streaks-background-MAHCzrAOkVY.jpg",
     prev: "act2_interview",
     next: "act2_stat",
@@ -143,7 +143,7 @@ export const storyData = {
   act2_interview_3: {
     id: "act2_interview_3",
     type: "video",
-    src: "/videos/2_5.mp4",
+    src: "https://res.cloudinary.com/dizimfqyz/video/upload/v1777834258/2_5_h6vjlm.mp4",
     bg: "https://marketplace.canva.com/AOkVY/MAHCzrAOkVY/1/tl/canva-abstract-white-light-streaks-background-MAHCzrAOkVY.jpg",
     prev: "act2_stat",
     next: "act2_timeline",
@@ -340,7 +340,7 @@ export const storyData = {
     type: "cover",
     chapter: "Hồi 5",
     title: "Tương lai nào khi hàng triệu người già không có lương hưu?",
-    bg: "/videos/5_1.mp4",
+    bg: "https://res.cloudinary.com/dizimfqyz/video/upload/v1777834380/5_1_lqyypv.mp4",
     prev: "act4_global",
     next: "act5_solution",
   },

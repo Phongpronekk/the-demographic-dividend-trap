@@ -299,13 +299,13 @@ function AlgorithmTrapScene({ scene }) {
 
   const playScenario = (type) => {
     if (type === "day") {
-      setVideoSrc("/videos/POV Buổi sáng.mp4");
+      setVideoSrc("https://res.cloudinary.com/dizimfqyz/video/upload/v1777834836/POV_Bu%E1%BB%95i_s%C3%A1ng_g4vayb.mp4");
       setResult({
         title: "Thuê bao không liên lạc được",
         desc: "Khách gọi điện bị thuê bao, không thể giao được hàng. Hệ thống không tính là hoàn thành cuốc xe. Bạn đã đánh mất chuỗi thưởng 360.000đ.",
       });
     } else {
-      setVideoSrc("/videos/POV Ban đêm.mp4");
+      setVideoSrc("https://res.cloudinary.com/dizimfqyz/video/upload/v1777835382/POV_Ban_%C4%91%C3%AAm_r03s7q.mp4");
       setResult({
         title: "Vi phạm quy chế nền tảng",
         desc: "Bạn nhận đơn hàng có thông tin không rõ ràng. Nền tảng ghi nhận vi phạm quy chế hoạt động. Trừ điểm tín nhiệm và hủy toàn bộ chuỗi thưởng.",
