@@ -36,7 +36,7 @@ export const storyData = {
     text: `Đêm muộn tại một tuyến phố đông đúc, Hoàng Văn Thắng (23 tuổi) tranh thủ ăn vội suất cơm hộp trước khi tiếp tục nhận đơn hàng mới từ ứng dụng. Bắt đầu làm giao hàng công nghệ từ những năm đầu đại học, Thắng lựa chọn công việc này với kỳ vọng “làm chủ thời gian” và tạo thu nhập nhanh theo từng đơn hàng. Trên màn hình điện thoại, thu nhập liên tục được cập nhật, với tổng mức có thể đạt khoảng 10–12 triệu đồng mỗi tháng. 
 
   Tuy nhiên, sự linh hoạt về thời gian không đồng nghĩa với việc giảm áp lực lao động. Để duy trì mức thu nhập này, nhiều tài xế phải làm việc với cường độ cao, trung bình khoảng 75,6 giờ mỗi tuần - một con số vượt xa chuẩn lao động thông thường là 48 giờ mỗi tuần. Đi kèm với đó là việc thiếu các chế độ an sinh cơ bản như bảo hiểm xã hội, trợ cấp ốm đau hay bảo hiểm tai nạn, khiến người lao động phải tự chi trả cho các rủi ro phát sinh.`,
-    bg: "/pictures/1_2.jpg",
+    bg: "/pictures/IMG_7643.JPG",
     prev: "act1_cover",
     next: "act1_income_flip",
   },
@@ -63,7 +63,7 @@ export const storyData = {
     text: `Theo số liệu thống kê năm 2025, thu nhập bình quân của lao động khu vực thành thị đạt khoảng 10,1 triệu đồng mỗi tháng. So với mặt bằng chung, thu nhập từ công việc giao hàng không có nhiều chênh lệch, trong khi yêu cầu về thời gian và điều kiện làm việc lại khắt khe hơn.
      
   Thực tế này cho thấy khoảng cách giữa kỳ vọng "làm chủ thời gian" và điều kiện làm việc thực tế, đồng thời phản ánh xu hướng một bộ phận lao động trẻ, trong đó có sinh viên các ngành kỹ thuật và công nghệ, lựa chọn làm việc ngoài chuyên môn.`,
-    bg: "/pictures/1_4.jpg",
+    bg: "/pictures/1.4.PNG",
     prev: "act1_income_flip",
     next: "act1_chat",
   },
@@ -106,7 +106,7 @@ export const storyData = {
     type: "cover",
     chapter: "Hồi 2",
     title: "Tuổi xế chiều chới với: Những cuốc xe ngoài vùng an sinh",
-    bg: "/pictures/IMG_1976.jpg",
+    bg: "/pictures/IMG_7650.JPG",
     prev: "act1_chat",
     next: "act2_interview",
   },
@@ -139,7 +139,7 @@ export const storyData = {
   Theo thống kê của Tổng Liên đoàn Lao động Việt Nam, trong khoảng 200.000 tài xế công nghệ trên cả nước, chỉ khoảng 7% tham gia bảo hiểm xã hội và chủ yếu dưới hình thức tự nguyện. Điều này cho thấy phần lớn lao động trong lĩnh vực này chưa có nền tảng an sinh dài hạn. Bên cạnh đó, nhiều chi phí và rủi ro liên quan đến tai nạn, sức khỏe hay vận hành đều được chuyển sang phía người lao động. Khi không có các cơ chế bảo vệ chính thức hoặc tích lũy hưu trí, họ phải tự tìm cách để đảm bảo cho tương lai của mình.
 
   Trong bối cảnh dân số vàng đang dần khép lại, thực trạng này đặt ra rủi ro dài hạn. Khi lực lượng lao động hiện nay bước vào tuổi nghỉ hưu, việc thiếu tích lũy tài chính và bảo hiểm có thể làm gia tăng áp lực lên hệ thống an sinh, đặc biệt trong lĩnh vực y tế và trợ cấp xã hội.`,
-    bg: "/pictures/2_3.jpg",
+    bg: "/pictures/2_4.PNG",
     prev: "act2_interview_2",
     next: "act2_interview_3",
   },
@@ -232,7 +232,7 @@ export const storyData = {
   Trong mô hình này, phần lớn chi phí vận hành được chuyển sang người lao động. Tài xế tự trang bị phương tiện, chi trả nhiên liệu và bảo trì, đồng thời đối mặt trực tiếp với rủi ro tai nạn và sức khỏe. Để đảm bảo thu nhập, nhiều người phải làm việc với cường độ cao, khoảng 75,6 giờ mỗi tuần, tức là nhiều hơn một nửa so với mức làm việc của các nghề nghiệp khác.
 
   Mỗi giờ chạy xe ngoài nắng hay ăn vội trên đường phố đầy bụi khiến sức khỏe suy yếu rất nhanh. Những số tiền thu được mỗi ngày thực chất là việc tiêu dùng trước sức khỏe và tuổi thọ sau này. Theo các báo cáo y tế, tài xế thường mắc các bệnh lâu dài về đường hô hấp vì khói bụi, đau xương khớp do tư thế ngồi lâu, cùng các vấn đề về tiêu hóa, tiết niệu và tim mạch. Khi người lao động đổ bệnh, các công ty ứng dụng không chịu trách nhiệm chi trả vì không có hợp đồng lao động chính thức. Khi đó, người lao động phải tự bỏ tiền chữa bệnh và xã hội phải gánh chịu chi phí chăm sóc rất lớn trong tương lai.`,
-    bg: "/pictures/3_3.jpg",
+    bg: "/pictures/IMG_7654.JPG",
     prev: "act3_algorithm_trap",
     next: "act3_stat",
   },
@@ -346,7 +346,7 @@ export const storyData = {
     type: "cover",
     chapter: "Hồi 5",
     title: "Tương lai nào khi hàng triệu người già không có lương hưu?",
-    bg: "https://res.cloudinary.com/dizimfqyz/video/upload/v1777834380/5_1_lqyypv.mp4",
+    bg: "/pictures/5inin.jpg",
     prev: "act4_global",
     next: "act5_solution",
   },
@@ -359,7 +359,7 @@ export const storyData = {
   Các số liệu thực tế cho thấy, nếu một người nhận được 8,6 triệu đồng mỗi tháng từ việc chạy xe ở hiện tại, họ đang đánh đổi một khoản quyền lợi rất lớn về sau. Cụ thể, người lao động này sẽ bị thâm hụt hàng chục triệu đồng tiền bảo hiểm xã hội và bảo hiểm y tế trong dài hạn. Khi hàng trăm ngàn tài xế công nghệ bước vào tuổi nghỉ hưu với sức khỏe suy giảm do làm việc quá sức mà không có tiền tích lũy, họ sẽ không có nguồn thu nhập để tự nuôi bản thân.
 
   Khi đó, nhà nước sẽ phải chi trả toàn bộ kinh phí chăm sóc y tế và trợ cấp cho những người già này. Điều này gây ra áp lực rất lớn cho ngân sách quốc gia. Nếu các quy định pháp luật không can thiệp kịp thời để buộc các công ty công nghệ cùng đóng bảo hiểm cho người lao động, xã hội sẽ phải đối mặt với tình trạng khó khăn lớn về an sinh trong vài thập kỷ tới. Những thay đổi về luật pháp ngay từ bây giờ là việc làm cần thiết để bảo đảm tương lai bền vững cho thế hệ trẻ`,
-    bg: "/pictures/5_2.jpg",
+    bg: "/pictures/51_2.JPG",
     prev: "act5_future",
   },
 };
