@@ -77,6 +77,17 @@ function StatsScene({ scene }) {
 
   return (
     <div className="scene-content income-scene">
+
+      <div className="scene-header">
+        {scene.title && (
+          <div className="scene-title">{scene.title}</div>
+        )}
+
+        {scene.subtitle && (
+          <div className="scene-subtitle">{scene.subtitle}</div>
+        )}
+      </div>
+
       <div className="income-main-card" onClick={handleClick}>
         <div className="stat-label">{mainStat.label}</div>
         <div className="stat-value">{mainStat.value}</div>
@@ -133,7 +144,14 @@ function ChatScene({ scene }) {
 
   return (
     <div className="scene-content">
-      <h1>{scene.title}</h1>
+
+      <div className="scene-header">
+        {scene.subtitle && (
+          <div className="chat-subtitle">
+            {scene.subtitle}
+          </div>
+        )}
+      </div>
 
       <div className="chat-box">
         <div className="chat-header">
@@ -226,7 +244,11 @@ function DriverSimScene({ scene }) {
 
   return (
     <div className="scene-content">
-      <h1>{scene.title}</h1>
+      
+      <h1 className="driver-sim-scene-title">
+        {scene.title}
+      </h1>
+
       <p className="scene-text">{scene.text}</p>
 
       <div className="driver-sim-card">
@@ -317,6 +339,21 @@ function AlgorithmTrapScene({ scene }) {
 
   return (
     <div className="algorithm-scene">
+
+      <div className="algorithm-header">
+        {scene.title && (
+          <div className="scene-title">
+            {scene.title}
+          </div>
+        )}
+
+        {scene.subtitle && (
+          <div className="algorithm-subtitle">
+            {scene.subtitle}
+          </div>
+        )}
+      </div>
+
       {view === "incoming" && (
         <div className="phone-frame">
           <div className="notch-speaker"></div>

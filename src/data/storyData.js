@@ -1,3 +1,5 @@
+import { sub } from "three/src/nodes/math/OperatorNode.js";
+
 export const storyData = {
   intro_title: {
     id: "intro_title",
@@ -42,7 +44,8 @@ export const storyData = {
   act1_income_flip: {
     id: "act1_income_flip",
     type: "stats",
-    title: "Dòng tiền nóng",
+    title: "Đằng sau con số 15-20 triệu/tháng là gì?",
+    subtitle: "Nhấn để xem chi tiết",
     stats: [
       { label: "Thu nhập", value: "15-20 triệu/tháng" },
       { label: "Quỹ hưu trí", value: "0đ" },
@@ -68,6 +71,7 @@ export const storyData = {
   act1_chat: {
     id: "act1_chat",
     type: "chat",
+    subtitle: "Nhấp chuột vào các câu hỏi dưới đây để lắng nghe chia sẻ từ Thắng.",
     character: "Thắng, 23 tuổi",
     role: "Cựu sinh viên ngành xây dựng",
     questions: [
@@ -153,7 +157,7 @@ export const storyData = {
     id: "act2_timeline",
     type: "timeline",
     title: "Đặc điểm từng nhóm tuổi",
-    subtitle: "Click vào từng nhóm tuổi để xem chi tiết",
+    subtitle: "Nhấn vào từng nhóm tuổi để đọc chi tiết, nhấn đủ cả 3 ô để xem kết luận cuối cùng.",
     timeline: [
       {
         age: "20-30",
@@ -212,6 +216,8 @@ export const storyData = {
 
   act3_algorithm_trap: {
     id: "act3_algorithm_trap",
+    subtitle: `Cuốc xe cuối cùng liệu có suôn sẻ? 
+    Xem trọn vẹn video hành trình để mở khóa kết quả.`,
     type: "algorithmTrap",
     bg: "https://i.pinimg.com/736x/47/0d/8b/470d8b593cb2c3cbb900d46d120a78ca.jpg",
     prev: "act3_cover",
@@ -278,7 +284,7 @@ export const storyData = {
     id: "act4_global",
     type: "choices",
     title: "Bài học từ thế giới",
-    text: "Bạn muốn xem kinh nghiệm từ quốc gia nào trước?",
+    text: "Bạn muốn xem kinh nghiệm từ quốc gia nào trước? (EU, Singapore, Trung Quốc)",
     choices: [
       { label: "Singapore", target: "act4_singapore" },
       { label: "Trung Quốc", target: "act4_china" },
