@@ -106,7 +106,7 @@ export const storyData = {
     type: "cover",
     chapter: "Hồi 2",
     title: "Tuổi xế chiều chới với: Những cuốc xe ngoài vùng an sinh",
-    bg: "/pictures/2_1.jpg",
+    bg: "/pictures/IMG_1976.jpg",
     prev: "act1_chat",
     next: "act2_interview",
   },
