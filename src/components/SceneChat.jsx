@@ -1,59 +1,92 @@
 import { useState } from "react";
 
-const questions = [
-  {
-    id: 1,
-    text: "Bạn có đóng BHXH tự nguyện không?",
-    answer: "Không, vì chạy xe thu nhập lúc có lúc không, đóng thêm thì khó xoay."
-  },
-  {
-    id: 2,
-    text: "Thu nhập chạy xe so với lương kỹ sư thế nào?",
-    answer: "Chạy xe có tháng được 15-20 triệu, hơn lương kỹ sư mới ra trường."
-  },
-  {
-    id: 3,
-    text: "Bạn có nghĩ đến tương lai không?",
-    answer: "Cũng có nghĩ... nhưng giờ phải lo trước mắt đã."
-  }
-];
-
-export default function ChatScene() {
+function ChatScene({ scene }) {
   const [messages, setMessages] = useState([]);
+  const [usedQuestions, setUsedQuestions] = useState([]);
 
-  const handleClick = (q) => {
-    // thêm câu hỏi
-    setMessages((prev) => [...prev, { type: "user", text: q.text }]);
+  const handleQuestionClick = (q) => {
+    if (usedQuestions.includes(q.id)) return;
 
-    // delay giả lập typing
+    // them cau hoi
+    setUsedQuestions((prev) => [...prev, q.id]);
+    setMessages((prev) => [...prev, { from: "user", text: q.text }]);
+
+    // thêm trạng thái đang nhập
+    setMessages((prev) => [...prev, { from: "typing", text: "Đang nhập..." }]);
+
     setTimeout(() => {
-      setMessages((prev) => [
-        ...prev,
-        { type: "bot", text: q.answer }
-      ]);
-    }, 800);
+      setMessages((prev) => {
+        // xoá typing
+        const filtered = prev.filter((msg) => msg.from !== "typing");
+
+        return [...filtered, { from: "bot", text: q.answer }];
+      });
+    }, 1000);
   };
 
   return (
-    <div className="chat-container">
-      <div className="chat-box">
-        {messages.map((msg, index) => (
-          <div
-            key={index}
-            className={msg.type === "user" ? "msg user" : "msg bot"}
-          >
-            {msg.text}
+    <div className="scene-content">
+
+      <div className="scene-header">
+        {scene.subtitle && (
+          <div className="chat-subtitle">
+            {scene.subtitle}
           </div>
-        ))}
+        )}
       </div>
 
-      <div className="question-list">
-        {questions.map((q) => (
-          <button key={q.id} onClick={() => handleClick(q)}>
-            {q.text}
-          </button>
-        ))}
+      <div className="chat-box">
+        <div className="chat-header">
+          <div className="chat-header-left">
+            <div className="avatar"></div>
+            <div>
+              <div className="chat-name">{scene.character}</div>
+              <div className="chat-desc">{scene.role}</div>
+            </div>
+          </div>
+        </div>
+
+        <div className="chat-body">
+          {messages.map((msg, index) => (
+            <div
+              key={index}
+              className={
+                msg.from === "user"
+                  ? "msg user-msg"
+                  : msg.from === "typing"
+                  ? "msg typing-msg"
+                  : "msg bot-msg"
+              }
+            >
+              {msg.text}
+            </div>
+          ))}
+        </div>
+
+        <div className="quick-questions">
+          {scene.questions.map((q) => (
+            <button
+              key={q.id}
+              onClick={() => handleQuestionClick(q)}
+              disabled={usedQuestions.includes(q.id)}
+            >
+              {q.text}
+            </button>
+          ))}
+        </div>
+
+        <div className="fake-chat-input">
+          <input
+            type="text"
+            placeholder="Nhập câu hỏi của bạn..."
+            disabled
+          />
+          <button disabled>Gửi</button>
+        </div>
+
       </div>
     </div>
   );
 }
+
+export default ChatScene;
