@@ -1,5 +1,3 @@
-import { sub } from "three/src/nodes/math/OperatorNode.js";
-
 export const storyData = {
   intro_title: {
     id: "intro_title",
