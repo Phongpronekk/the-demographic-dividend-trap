@@ -13,6 +13,7 @@ import CalculatorScene from "./components/SceneCalculator";
 import VideoScene from "./components/SceneVideo";
 import PictureScene from "./components/ScenePicture";
 import DonutScene from "./components/SceneDonut";
+// import ChoicesScene from "./components/SceneGlobalMap";
 import { PrevArrow, NextArrow } from "./components/NavArrows";
 
 export default function App() {
@@ -28,19 +29,9 @@ export default function App() {
     act5: ["act5_future", "act5_solution"],
   };
 
-  const getChapterKey = () => {
-    if (current.startsWith("intro")) return "intro";
-    if (current.startsWith("act1")) return "act1";
-    if (current.startsWith("act2")) return "act2";
-    if (current.startsWith("act3")) return "act3";
-    if (current.startsWith("act4")) return "act4";
-    if (current.startsWith("act5")) return "act5";
-
-    return "intro";
-  };
-
-  const currentChapterKey = getChapterKey();
-  const currentChapterScenes = chapterScenes[currentChapterKey];
+  // Lấy ra chapter hiện tại chỉ bằng 1 dòng code (VD: "act1_cover" -> "act1")
+  const currentChapterKey = current.split("_")[0] || "intro";
+  const currentChapterScenes = chapterScenes[currentChapterKey] || chapterScenes.intro;
   const currentChapterIndex = currentChapterScenes.indexOf(current);
 
   const chapterProgress =
@@ -48,29 +39,17 @@ export default function App() {
       ? (currentChapterIndex / (currentChapterScenes.length - 1)) * 100
       : 100;
 
-  const getCurrentChapter = () => {
-    if (current.startsWith("intro")) return "intro";
-    if (current.startsWith("act1")) return "act1_cover";
-    if (current.startsWith("act2")) return "act2_cover";
-    if (current.startsWith("act3")) return "act3_cover";
-    if (current.startsWith("act4")) return "act4_law_slider";
-    if (current.startsWith("act5")) return "act5_future";
-    return "intro";
-  };
-
   useEffect(() => {
     const handleKey = (e) => {
       if (e.key === "ArrowRight" && scene.next) {
         e.preventDefault();
-        document.activeElement?.blur();  // bỏ focus khỏi dropdown
-
+        document.activeElement?.blur(); 
         setCurrent(scene.next);
       }
 
       if (e.key === "ArrowLeft" && scene.prev) {
         e.preventDefault();
         document.activeElement?.blur();
-
         setCurrent(scene.prev);
       }
     };
@@ -79,40 +58,21 @@ export default function App() {
     return () => window.removeEventListener("keydown", handleKey);
   }, [scene]);
 
-  const backgroundStyle = {
-    backgroundImage: `linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.55)), url(${scene.bg || scene.bgLeft || ""})`,
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-  };
-
   const renderScene = () => {
     switch (scene.type) {
-      case "cover":
-        return <CoverScene scene={scene} />;
-      case "stats":
-        return <StatsScene scene={scene} />;
-      case "chat":
-        return <ChatScene scene={scene} />;
-      case "timeline":
-        return <TimelineScene scene={scene} />;
-      case "compare":
-        return <CompareScene scene={scene} />;
-      case "choices":
-        return <GlobeScene scene={scene} onChoose={setCurrent} />;
-      case "calculator":
-        return <CalculatorScene scene={scene} />;
-      case "driverSim":
-        return <DriverSimScene scene={scene} />;
-      case "algorithmTrap":
-        return <AlgorithmTrapScene scene={scene} />;
-      case "video":
-        return <VideoScene scene={scene} />;
-      case "picture":
-        return <PictureScene scene={scene} />;
-      case "donut":
-        return <DonutScene scene={scene} />;
-      default:
-        return <CoverScene scene={scene} />;
+      case "cover": return <CoverScene scene={scene} />;
+      case "stats": return <StatsScene scene={scene} />;
+      case "chat": return <ChatScene scene={scene} />;
+      case "timeline": return <TimelineScene scene={scene} />;
+      case "compare": return <CompareScene scene={scene} />;
+      case "choices": return <GlobeScene scene={scene} onChoose={setCurrent} />;
+      case "calculator": return <CalculatorScene scene={scene} />;
+      case "driverSim": return <DriverSimScene scene={scene} />;
+      case "algorithmTrap": return <AlgorithmTrapScene scene={scene} />;
+      case "video": return <VideoScene scene={scene} />;
+      case "picture": return <PictureScene scene={scene} />;
+      case "donut": return <DonutScene scene={scene} />;
+      default: return <CoverScene scene={scene} />;
     }
   };
 
@@ -120,41 +80,41 @@ export default function App() {
 
   return (
     <div className="app">
+      <div className="top-bar">
+        <div className="top-bar-left">
+          <span className="brand-mark">RR</span>
+          <span className="top-title">Rút ruột dân số vàng</span>
+        </div>
 
-    <div className="top-bar">
-      <div className="top-bar-left">
-        <span className="brand-mark">RR</span>
-        <span className="top-title">Rút ruột dân số vàng</span>
+        <select
+          className="chapter-select"
+          // Dùng luôn phần tử đầu tiên của chương để set value
+          value={currentChapterScenes[0]} 
+          onChange={(e) => setCurrent(e.target.value)}
+        >
+          <option value="intro_title">Mở đầu</option>
+          <option value="act1_cover">Hồi 1: Cạm bẫy tự do</option>
+          <option value="act2_cover">Hồi 2: Tuổi xế chiều chới với</option>
+          <option value="act3_cover">Hồi 3: Thuật toán "vắt kiệt"</option>
+          <option value="act4_law_slider">Hồi 4: Vá lỗ hổng pháp lý</option>
+          <option value="act5_future">Hồi 5: Tương lai</option>
+        </select>
       </div>
 
-      <select
-        className="chapter-select"
-        value={getCurrentChapter()}
-        onChange={(e) => setCurrent(e.target.value)}
-      >
-        <option value="intro_title">Mở đầu</option>
-        <option value="act1_cover">Hồi 1: Cạm bẫy tự do</option>
-        <option value="act2_cover">Hồi 2: Tuổi xế chiều chới với</option>
-        <option value="act3_cover">Hồi 3: Thuật toán "vắt kiệt"</option>
-        <option value="act4_law_slider">Hồi 4: Vá lỗ hổng pháp lý</option>
-        <option value="act5_future">Hồi 5: Tương lai</option>
-      </select>
-    </div>
+      <div className="chapter-timeline">
+        <div className="chapter-timeline-label">
+          {currentChapterKey === "intro"
+            ? "Mở đầu"
+            : `Hồi ${currentChapterKey.replace("act", "")}`}
+        </div>
 
-    <div className="chapter-timeline">
-      <div className="chapter-timeline-label">
-        {currentChapterKey === "intro"
-          ? "Mở đầu"
-          : `Hồi ${currentChapterKey.replace("act", "")}`}
+        <div className="chapter-timeline-track">
+          <div
+            className="chapter-timeline-fill"
+            style={{ width: `${chapterProgress}%` }}
+          ></div>
+        </div>
       </div>
-
-      <div className="chapter-timeline-track">
-        <div
-          className="chapter-timeline-fill"
-          style={{ width: `${chapterProgress}%` }}
-        ></div>
-      </div>
-    </div>
 
       {isVideoBg ? (
         <video
