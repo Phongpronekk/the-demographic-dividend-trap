@@ -38,12 +38,6 @@ h1 {
   margin-bottom: 16px;
 }
 
-h2 {
-  font-size: 28px;
-  font-weight: 400;
-  opacity: 0.9;
-}
-
 .scene-text {
   max-width: 800px;
   margin: 0 auto;
@@ -119,45 +113,6 @@ h2 {
 .stat-value {
   font-size: 28px;
   font-weight: bold;
-}
-
-.chat-box {
-  width: min(700px, 100%);
-  margin: 0 auto;
-  border-radius: 20px;
-  overflow: hidden;
-  background: rgba(255,255,255,.08);
-  border: 1px solid rgba(255,255,255,.15);
-  text-align: left;
-}
-
-.chat-header {
-  padding: 16px 20px;
-  background: rgba(0,0,0,.35);
-}
-
-.chat-body {
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.msg {
-  max-width: 75%;
-  padding: 14px 16px;
-  border-radius: 16px;
-  line-height: 1.5;
-}
-
-.user-msg {
-  align-self: flex-end;
-  background: #3478f6;
-}
-
-.bot-msg {
-  align-self: flex-start;
-  background: rgba(255,255,255,.18);
 }
 
 .timeline-tabs {
@@ -280,59 +235,4 @@ input[type="range"] {
   font-weight: 700;
   letter-spacing: 0.5px;
   text-transform: uppercase;
-}
-
-.timeline-bar {
-  position: absolute;
-  bottom: 22px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: min(900px, 78%);
-  z-index: 3;
-}
-
-.timeline-track {
-  position: absolute;
-  top: 11px;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: rgba(255, 255, 255, 0.25);
-  border-radius: 999px;
-}
-
-.timeline-fill {
-  position: absolute;
-  top: 11px;
-  left: 0;
-  height: 2px;
-  background: rgba(255, 255, 255, 0.95);
-  border-radius: 999px;
-}
-
-.timeline-dots {
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  pointer-events: auto;
-}
-
-.timeline-dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.7);
-  background: rgba(255, 255, 255, 0.18);
-  cursor: pointer;
-  transition: 0.2s ease;
-}
-
-.timeline-dot:hover {
-  transform: scale(1.15);
-  background: rgba(255, 255, 255, 0.4);
-}
-
-.timeline-dot.active {
-  background: white;
 }
