@@ -7,17 +7,37 @@ function StatsScene({ scene }) {
   const handleClick = () => {
     setVisibleCount(1);
 
-    // chia 3 vùng cố định (không đè nhau)
-    const zones = [
-      { top: "20%", left: "25%" }, // trái trên
-      { top: "20%", left: "75%" }, // phải trên
-      { top: "70%", left: "50%" }, // dưới
-    ];
+    // Vùng trung tâm cho phép xuất hiện (tránh mép ngoài màn hình)
+    const zone = { minTop: 22, maxTop: 78, minLeft: 15, maxLeft: 85 };
+    const minDistance = 20; // khoảng cách tối thiểu (%) giữa các ô, hạn chế đè quá kín
 
-    // shuffle để vẫn có random
-    const shuffled = zones.sort(() => Math.random() - 0.5);
+    const generatePositions = (count) => {
+      const points = [];
+      let attempts = 0;
 
-    setPositions(shuffled);
+      while (points.length < count && attempts < 300) {
+        attempts++;
+        const candidate = {
+          top: Math.random() * (zone.maxTop - zone.minTop) + zone.minTop,
+          left: Math.random() * (zone.maxLeft - zone.minLeft) + zone.minLeft,
+        };
+
+        const isFarEnough = points.every((p) => {
+          const dx = p.left - candidate.left;
+          const dy = p.top - candidate.top;
+          return Math.sqrt(dx * dx + dy * dy) >= minDistance;
+        });
+
+        // Sau nhiều lần thử mà vẫn không đủ xa, chấp nhận luôn để tránh vòng lặp vô hạn
+        if (isFarEnough || attempts > 250) {
+          points.push(candidate);
+        }
+      }
+
+      return points.map((p) => ({ top: `${p.top}%`, left: `${p.left}%` }));
+    };
+
+    setPositions(generatePositions(scene.stats.length - 1));
 
     setTimeout(() => {
       scene.stats.slice(1).forEach((_, i) => {
@@ -59,7 +79,7 @@ function StatsScene({ scene }) {
                 style={{
                   top: positions[index]?.top,
                   left: positions[index]?.left,
-                  zIndex: 20 + index, //đè lên cả ô thu nhập
+                  zIndex: 150 + index, //đè lên cả ô thu nhập
                 }}
               >
                 <div className="stat-label">{item.label}</div>
